@@ -14,5 +14,9 @@ namespace WCF.Services
         {
             return s.ToUpper();
         }
+        public string Minuscule(string s)
+        {
+            return s.ToLower();
+        }
     }
 }

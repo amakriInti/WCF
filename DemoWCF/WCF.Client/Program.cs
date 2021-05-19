@@ -8,6 +8,8 @@ using WCF.Contrat;
 
 namespace WCF.Client
 {
+    // netsh http add urlacl url=http://+:2022/MesServicesWCF user=aliface\alima
+    // netsh http delete urlacl url=http://+:2022/MesServicesWCF
     class Program
     {
         private static IService1 service = null;
@@ -17,10 +19,8 @@ namespace WCF.Client
             var s = Console.ReadLine();
 
             //service = new Service1();
-            canal = new ChannelFactory<IService1>(
-                new NetTcpBinding(),
-                "net.tcp://localhost:2021/MesServicesWCF"
-                );
+            canal = new ChannelFactory<IService1>("MonAcces");
+
             service = canal.CreateChannel();
 
             var resultat = service.Majusucule(s);

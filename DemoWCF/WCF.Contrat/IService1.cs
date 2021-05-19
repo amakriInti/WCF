@@ -12,5 +12,8 @@ namespace WCF.Contrat
     {
         [OperationContract]
         string Majusucule(string s);
+
+        [OperationContract]
+        string Minuscule(string s);
     }
 }

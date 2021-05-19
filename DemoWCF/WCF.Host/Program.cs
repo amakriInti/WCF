@@ -14,11 +14,11 @@ namespace WCF.Host
         private static ServiceHost hote1 = new ServiceHost(typeof(Service1));
         static void Main(string[] args)
         {
-            hote1.AddServiceEndpoint(
-                typeof(IService1),
-                new NetTcpBinding(),
-                "net.tcp://localhost:2021/MesServicesWCF"
-                );
+            //hote1.AddServiceEndpoint(
+            //    typeof(IService1),
+            //    new NetTcpBinding(),
+            //    "net.tcp://localhost:2021/MesServicesWCF"
+            //    );
             hote1.Open();
 
             Console.WriteLine("Je suis prêt");
