@@ -5,28 +5,26 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using WCF.Contrat;
+using WCF.Services;
 
-namespace WCF.Client
+namespace WCF.Host
 {
     class Program
     {
-        private static IService1 service = null;
-        private static ChannelFactory<IService1> canal = null;
+        private static ServiceHost hote1 = new ServiceHost(typeof(Service1));
         static void Main(string[] args)
         {
-            var s = Console.ReadLine();
-
-            //service = new Service1();
-            canal = new ChannelFactory<IService1>(
+            hote1.AddServiceEndpoint(
+                typeof(IService1),
                 new NetTcpBinding(),
                 "net.tcp://localhost:2021/MesServicesWCF"
                 );
-            service = canal.CreateChannel();
+            hote1.Open();
 
-            var resultat = service.Majusucule(s);
-            Console.WriteLine(resultat);
-
+            Console.WriteLine("Je suis prêt");
             Console.ReadLine();
+
+            hote1.Close();
         }
     }
 }

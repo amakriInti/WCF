@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{346B5C64-BBE8-453D-849F-56DFE05D7671}</ProjectGuid>
+    <ProjectGuid>{C68A4A55-0910-435C-8B57-D69760EAB193}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WCF.Client</RootNamespace>
-    <AssemblyName>WCF.Client</AssemblyName>
+    <RootNamespace>WCF.Host</RootNamespace>
+    <AssemblyName>WCF.Host</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,10 @@
     <ProjectReference Include="..\WCF.Contrat\WCF.Contrat.csproj">
       <Project>{6397fc66-c89c-43ba-b3cc-f9564797b475}</Project>
       <Name>WCF.Contrat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WCF.Services\WCF.Services.csproj">
+      <Project>{62e34996-a20b-4f3f-aa6f-4b8b1cdbd9d3}</Project>
+      <Name>WCF.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
